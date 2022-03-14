@@ -9,7 +9,7 @@
 <script>
 import { toyService } from '../services/toy-service.js'
 // import toyFilter from '../components/toy-filter.vue'
-// import toyList from '../components/toy-list.vue'
+import toyList from '../components/toy-list.vue'
 
 export default {
   name: 'toy-app',
@@ -36,15 +36,15 @@ export default {
     setFilter(filterBy) {
       this.filterBy = filterBy
     },
-    goToEdit() {
-      this.$router.push(`/toy/edit`)
-    },
+    // goToEdit() {
+    //   this.$router.push(`/toy/edit`)
+    // },
     removeToy(toyId) {
       this.$store.dispatch({ type: 'removeToy', id: toyId })
     },
   },
   components: {
-   //  toyList,
+    toyList,
    //  toyFilter,
   },
 }
