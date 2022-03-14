@@ -8,7 +8,7 @@
 
 <script>
 import { toyService } from '../services/toy-service.js'
-// import toyFilter from '../components/toy-filter.vue'
+import toyFilter from '../components/toy-filter.vue'
 import toyList from '../components/toy-list.vue'
 
 export default {
@@ -24,8 +24,8 @@ export default {
     },
     toysToShow() {
       if (!this.filterBy) return this.toys
-      const regex = new RegExp(this.filterBy.vendor, 'i')
-      return this.toys.filter((toy) => regex.test(toy.vendor))
+      const regex = new RegExp(this.filterBy.name, 'i')
+      return this.toys.filter((toy) => regex.test(toy.name))
     },
   },
   created() {},
@@ -36,16 +36,16 @@ export default {
     setFilter(filterBy) {
       this.filterBy = filterBy
     },
-    // goToEdit() {
-    //   this.$router.push(`/toy/edit`)
-    // },
+    goToEdit() {
+      this.$router.push(`/toy/edit`)
+    },
     removeToy(toyId) {
       this.$store.dispatch({ type: 'removeToy', id: toyId })
     },
   },
   components: {
     toyList,
-   //  toyFilter,
+    toyFilter,
   },
 }
 </script>

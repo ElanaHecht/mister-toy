@@ -21,7 +21,7 @@ function query() {
 function getById(toyId) {
   const toy = storageService.get(KEY, toyId)
   const review = 'I bought this toy and it is amazing!'
-  return todo.reviews.push(review)
+  return toy.reviews.push(review)
 }
 
 function remove(toyId) {
@@ -29,18 +29,17 @@ function remove(toyId) {
 }
 
 function save(toy) {
-  if (toy.id) return storageService.put(KEY, toy)
+  if (toy._id) return storageService.put(KEY, toy)
   return storageService.post(KEY, toy)
 }
 
-function getEmptyToy(name, price, labels, inStock = true) {
+function getEmptyToy() {
   return {
-    _id: utilService.makeId(),
     name: '',
     price: 0,
     labels: [],
-    createdAt: new Date().toDateString(),
-    inStock,
+    createdAt: Date.now(),
+    inStock: true,
     reviews: ['I love this toy!']
   }
 }

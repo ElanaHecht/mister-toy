@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     goBack() {
-      this.$router.push("/toy");
+      this.$router.push('/toy');
     },
   },
   computed: {

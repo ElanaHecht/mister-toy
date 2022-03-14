@@ -1,4 +1,4 @@
-// import { toyService } from '../../services/toy-service'
+import { toyService } from '../../services/toy-service'
 
 export default {
    state: {
