@@ -1,8 +1,8 @@
 <template>
   <section class="toy-app">
-    <button @click="goToEdit" class="btn btn-secondary">Add a new toy</button>
     <toy-filter @setFilter="setFilter" />
     <toy-list @removeToy="removeToy" v-if="toys" :toys="toysToShow" />
+    <button @click="goToEdit" class="btn btn-secondary">Add a new toy</button>
   </section>
 </template>
 

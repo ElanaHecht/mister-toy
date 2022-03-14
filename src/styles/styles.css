@@ -3,7 +3,10 @@
 @import './base/util.css';
 
 /** VIEWS **/
+@import './views/app.css';
 
 
 /** COMPONENTS **/
+@import './components/toy-list.css';
+@import './components/main-header.css';
 

@@ -1,7 +1,7 @@
 <template>
   <header class="main-header flex items-center justify-between">
     <div class="logo uppercase">
-      <h2>Toys</h2>
+      <h1>Mister Toy</h1>
     </div>
     <nav class="flex gap-1">
       <router-link class="link" to="/">Home</router-link>

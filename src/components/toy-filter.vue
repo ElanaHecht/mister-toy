@@ -8,11 +8,11 @@
       class="form-input"
       placeholder="Search toy name"
     />
-    <input type="checkbox" id="stock" @change="toggleInStock" checked />
+    <input class="checkmark" type="checkbox" id="stock" @change="toggleInStock" checked="checked" />
     <label for="stock">In Stock</label>
 
-    <label for="labels">Choose a category:</label>
-    <select name="labels" id="labels" @change="setFilter" multiple>
+    <p for="labels">Choose a category:</p>
+    <select class="select" name="labels" id="labels" @change="setFilter" multiple>
       <option value="on wheels">On Wheels</option>
       <option value="box game">Box Game</option>
       <option value="art">Art</option>
@@ -22,7 +22,7 @@
       <option value="outdoor">Outdoor</option>
     </select>
 
-    <div>
+    <div class="sort-container">
       <label>
         <input
           type="radio"
@@ -32,7 +32,7 @@
           hidden
         />
         Name</label
-      >
+      > |
       <label>
         <input
           type="radio"
@@ -42,7 +42,7 @@
           hidden
         />
         Price</label
-      >
+      > |
       <label>
         <input
           type="radio"

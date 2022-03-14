@@ -15,10 +15,11 @@
 <style scoped>
 .custom-card {
   justify-content: space-between;
-  background: white;
+  background:var(--gray-100);
   padding: 2em;
-  border: 1px solid black;
+  border: none;
   border-radius: 5px;
+  box-shadow: var(--border-shadow-light);
 }
 
 .custom-card header {

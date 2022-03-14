@@ -52,7 +52,6 @@ function _createToys() {
       { _id: 't102', name: 'Remote Robot', price: 98, labels: ['Doll', 'Battery Powered', 'Outdoor'], createdAt: 1631031701011, inStock: true,  reviews: ['This is an awesome toy. Buy it now!'] },
       { _id: 't103', name: 'Hot Wheels', price: 105, labels: ['On wheels', 'Battery Powered', 'Outdoor'], createdAt: 1631031601011, inStock: true,  reviews: ['This is a terrible toy. Do not buy!'] },
       { _id: 't104', name: 'Van Gogh Puzzle', price: 145, labels: ['Art', 'Puzzle', 'Box game'], createdAt: 1631031501011, inStock: true,  reviews: ['This is an awesome toy. Buy it now!']},
-      ,
     ]
     utilService.saveToStorage(KEY, toys)
   }
