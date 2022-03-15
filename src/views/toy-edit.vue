@@ -53,6 +53,8 @@ export default {
       this.$router.push('/toy');
     },
     saveToy() {
+      console.log('this.toyToEdit:', this.toyToEdit);
+      
       this.$store
         .dispatch({ type: 'saveToy', toy: this.toyToEdit })
         .then(() => {

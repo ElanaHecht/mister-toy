@@ -35,6 +35,8 @@ export default {
   },
   computed: {
     labels() {
+      console.log('this.toy.labels:', this.toy.labels);
+      
       return this.toy.labels.toString()
     },
     inStock(){

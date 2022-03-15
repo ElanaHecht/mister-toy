@@ -7,10 +7,8 @@
           <span class="fw-bold">Price:</span>
           {{ $filters.currencyUSD(toy.price) }}
         </p>
-        <p>
-          <span class="fw-bold">Labels:</span>
-          {{ labels }}
-        </p>
+        <span class="fw-bold">Labels:</span>
+        <p class="flex" v-for="label in toy.labels" :key="label">{{ label }}</p>
         <p>
           <span class="fw-bold">Created:</span>
           {{ $filters.timeFormat(toy.createdAt) }}
@@ -35,10 +33,10 @@
 </template>
 
 <script>
-import customCard from './custom-card.vue';
+import customCard from "./custom-card.vue";
 
 export default {
-  name: 'toy-preview',
+  name: "toy-preview",
   props: {
     toy: Object,
   },
@@ -47,21 +45,19 @@ export default {
   },
   methods: {
     goToDetail() {
-      this.$router.push(`/toy/${this.toy.id}`);
+      this.$router.push(`/toy/${this.toy._id}`);
     },
     goToEdit() {
-      this.$router.push(`/toy/edit/${this.toy.id}`);
+      this.$router.push(`/toy/edit/${this.toy._id}`);
     },
     removeToy(toyId) {
-      this.$emit('removeToy', toyId);
+      console.log('removed toy:', toyId);
+      this.$emit("removeToy", toyId);
     },
   },
   computed: {
-    labels() {
-      return this.toy.labels.toString();
-    },
     inStock() {
-      return this.toy.inStock ? 'Yes' : 'No';
+      return this.toy.inStock ? "Yes" : "No";
     },
   },
 };

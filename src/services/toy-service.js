@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-
+import { utilService } from './util-service.js'
 const TOY_URL = '//localhost:3030/api/toy/'
 
 export const toyService = {
@@ -36,15 +36,15 @@ function save(toy) {
 }
 
 function getEmptyToy() {
-  return {
-    _id: '',
-    name: '',
-    price: 0,
-    labels: ['Doll', 'Battery Powered', 'Baby'],
-    createdAt: Date.now(),
-    inStock: true,
-    reviews: ['I love this toy!', 'The best toy']
-  }
+    return {
+        _id: utilService.makeId(),
+        name: '',
+        price: 0,
+        labels: ['Doll', 'Battery Powered', 'Baby'],
+        createdAt: Date.now(),
+        inStock: true,
+        reviews: ['I love this toy!', 'The best toy']
+    }
 }
 
 // function _createToys() {

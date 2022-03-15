@@ -36,6 +36,8 @@ export default {
          })
       },
       removeToy({ commit }, { id }) {
+         console.log('removing toy id:', id);
+         
          toyService.remove(id).then(() => {
             commit({ type: 'removeToy', id })
          })
