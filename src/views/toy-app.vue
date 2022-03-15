@@ -2,12 +2,11 @@
   <section class="toy-app">
     <toy-filter @setFilter="setFilter" />
     <toy-list @removeToy="removeToy" v-if="toys" :toys="toysToShow" />
-    <button @click="goToEdit" class="btn btn-secondary">Add a new toy</button>
+    <router-link to="/toy/edit" class="btn btn-secondary">Add a new toy</router-link>
   </section>
 </template>
 
 <script>
-import { toyService } from '../services/toy-service.js'
 import toyFilter from '../components/toy-filter.vue'
 import toyList from '../components/toy-list.vue'
 
@@ -30,9 +29,6 @@ export default {
   },
   created() {},
   methods: {
-    loadToys() {
-      toyService.query().then((toys) => (this.toys = toys))
-    },
     setFilter(filterBy) {
       this.filterBy = filterBy
     },

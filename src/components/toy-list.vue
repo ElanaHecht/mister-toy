@@ -8,6 +8,7 @@
 import toyPreview from './toy-preview.vue'
 
 export default {
+  name: 'toy-list',
   props: {
     toys: {
       type: Array,

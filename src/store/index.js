@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-import toyStore from './modules/toy-module.js'
+import toyStore from './toy.store.js'
 
 // create a store instance
 const store = createStore({

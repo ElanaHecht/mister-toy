@@ -12,7 +12,7 @@
     <label for="stock">In Stock</label>
 
     <p for="labels">Choose a category:</p>
-    <select class="select" name="labels" id="labels" @change="setFilter" multiple>
+    <select class="select" name="labels" id="labels" @change="setFilter" v-model="filterBy.labels" multiple>
       <option value="on wheels">On Wheels</option>
       <option value="box game">Box Game</option>
       <option value="art">Art</option>
@@ -38,7 +38,6 @@
           type="radio"
           v-model.number="filterBy.sortBy"
           @change="setFilter"
-          value="1"
           hidden
         />
         Price</label
@@ -48,7 +47,6 @@
           type="radio"
           v-model.number="filterBy.sortBy"
           @change="setFilter"
-          value="-1"
           hidden
         />
         Created</label
@@ -65,18 +63,15 @@ export default {
       filterBy: {
         name: '',
         inStock: true,
-        label: 'on wheels',
+        labels: [],
         sortBy: 'name',
       },
     };
   },
   methods: {
     setFilter() {
-      this.$emit('setFilter', this.filterBy);
+      this.$emit('setFilter', JSON.parse(JSON.stringify(this.filterBy)));
     },
-    //  setSort() {
-    //    this.$emit('setSort', this.sortBy);
-    //  },
     toggleInStock() {
       this.filterBy.inStock = !this.filterBy.inStock;
     },

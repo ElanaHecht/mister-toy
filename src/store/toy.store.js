@@ -1,8 +1,9 @@
-import { toyService } from '../../services/toy-service'
+import { toyService } from '../services/toy-service'
 
 export default {
    state: {
       toys: null,
+      filterBy: null
    },
    getters: {
       toys(state) {
@@ -14,6 +15,8 @@ export default {
          state.toys = toys
       },
       removeToy(state, { id }) {
+         console.log('id:', id);
+         
          const idx = state.toys.findIndex((toy) => toy.id === id)
          state.toys.splice(idx, 1)
       },
@@ -22,6 +25,9 @@ export default {
          if (idx !== -1) state.toys.splice(idx, 1, toy)
          else state.toys.push(toy)
       },
+      setFilter(state, {filterBy}) {
+         state.filterBy = filterBy;
+       },
    },
    actions: {
       loadToys({ commit }) {
@@ -39,5 +45,9 @@ export default {
             commit({ type: 'saveToy', toy })
          })
       },
+      filter({commit, dispatch}, {filterBy}) {
+         commit({type: 'setFilter', filterBy});
+         dispatch({type: 'loadToys'});
+       },
    },
 }
