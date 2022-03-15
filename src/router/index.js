@@ -4,6 +4,7 @@ import homePage from '../views/home-page.vue'
 import toyApp from '../views/toy-app.vue'
 import toyDetails from '../views/toy-details.vue'
 import toyEdit from '../views/toy-edit.vue'
+import dashboardPage from '../views/dashboard-page.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -28,6 +29,11 @@ const router = createRouter({
       path: '/toy/edit/:id?',
       name: 'toy-edit',
       component: toyEdit,
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: dashboardPage,
     },
     // {
     //   path: '/about',

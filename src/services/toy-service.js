@@ -39,6 +39,7 @@ function getEmptyToy() {
     return {
         _id: utilService.makeId(),
         name: '',
+        type: 'Educational',
         price: 0,
         labels: ['Doll', 'Battery Powered', 'Baby'],
         createdAt: Date.now(),

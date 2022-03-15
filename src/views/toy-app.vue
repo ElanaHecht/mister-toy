@@ -2,7 +2,7 @@
   <section class="toy-app">
     <toy-filter @setFilter="setFilter" />
     <toy-list @removeToy="removeToy" v-if="toys" :toys="toysToShow" />
-    <router-link to="/toy/edit" class="btn btn-secondary">Add a new toy</router-link>
+    <button @click="goToEdit" class="btn btn-secondary">Add a new toy</button>
   </section>
 </template>
 
@@ -34,6 +34,9 @@ export default {
     },
     removeToy(toyId) {
       this.$store.dispatch({ type: 'removeToy', id: toyId })
+    },
+    goToEdit() {
+      this.$router.push(`/toy/edit/`);
     },
   },
   components: {

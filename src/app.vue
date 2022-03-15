@@ -1,6 +1,6 @@
 <template>
 <section class="app-container container">
-  <app-header></app-header>
+  <app-header />
   <router-view />
   </section>
 </template>
@@ -14,7 +14,7 @@ export default {
     appHeader,
   },
   created() {
-    this.$store.dispatch({ type: "loadToys" });
+    this.$store.dispatch({ type: 'loadToys' })
   },
 };
 </script>

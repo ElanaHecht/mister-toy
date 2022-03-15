@@ -1,3 +1,4 @@
+
 :root {
   --red-50: #fef2f2;
   --red-100: #fee2e2;
@@ -328,19 +329,9 @@ img {
 
 /** forms **/
 
-/* .checkmark{
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-} */
 
 .checkmark {
   cursor: pointer;
-  height: 20px;
-  width: 20px;
-  background-color: #eee;
   margin: 10px;
 }
 

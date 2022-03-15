@@ -6,7 +6,7 @@
       <p><span class="fw-bold">Price:</span> {{ $filters.currencyUSD(toy.price) }}</p>
       <p><span class="fw-bold">Categories:</span> {{ labels }}</p>
       <p><span class="fw-bold">Added:</span> {{ $filters.timeFormat(toy.createdAt) }}</p>
-      <p><span class="fw-bold">In stock?</span> {{ inStock }}</p>
+      <p><span class="fw-bold">In Stock:</span> {{ inStock }}</p>
     </article>
     <button @click="goBack" class="btn btn-primary">go back</button>
   </section>
